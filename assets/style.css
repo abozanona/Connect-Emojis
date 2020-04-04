@@ -1,0 +1,29 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    overflow: hidden;
+    background-color: #ccc;
+}
+#level-1 {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eee;
+}
+#emojies-phases {
+    position: absolute;
+    z-index: 20;
+    left: 10px;
+    top: 10px;
+    font-size: 20px;
+}
+#player-status {
+    position: absolute;
+    z-index: 20;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+}
