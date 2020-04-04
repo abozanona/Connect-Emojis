@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style.css"/>
+    <link rel="stylesheet" href="assets/style.css" />
     <title>Separated family</title>
 </head>
+
 <body>
     <div id="level-1">
         <canvas id="gameCanvas" width="700" height="700" style="border:1px solid #000000;"></canvas>
@@ -19,7 +21,7 @@
         <div>😭Loudly crying</div>
         <div>🤒Getting sick</div>
         <div>😷Gettign so sick</div>
-        <div>🤢Gettign too sick</div>
+        <div>🤢Too much sick</div>
         <div>😡Angry</div>
         <div>🤬Fu**ing angry</div>
         <div>😈Devil</div>
@@ -28,11 +30,35 @@
         <div>☠️Infected region</div>
         <div>💩Shit</div>
     </div>
+    <div id="instructions">
+        <h3>Instructions</h3>
+        🏹 Use arrows to move.<br />
+        🏹 Press space to change<br /> your color.<br />
+        🏹 Draw a path between<br /> emojies to get more score.<br />
+        🏹 Collect 💞 to make<br /> emojies happier.<br />
+        🏹 Avoid 💩.<br />
+        🏹 Share your score<br /> with friends<br />
+        <a onclick="shareGame()"
+            href="#"
+            target="_window">Click here to <br/>share your progress</a>
+    </div>
+    <script>
+        function shareGame(){
+            let url = window.location;
+            let title = encodeURIComponent('New progress in the game');
+            let summary = encodeURIComponent('Game summary');
+            let description = encodeURIComponent('Game description');
+            let href = `https://www.facebook.com/sharer/sharer.php?u=${url}&display=popup&ref=plugin&caption=${summary}&title=${title}&description=${description}`;
+            return !window.open(href, 'Share on Facebook', 'width=640, height=536');
+        }
+    </script>
     <div id="player-status">
         <div>💞Unions: <span id="unions">0</span></div>
         <div>💩Shits: <span id="shits">0</span></div>
         <div>🦶Steps: <span id="steps">0</span></div>
+        <div>🤖Level: <span id="level">0</span></div>
     </div>
     <script src="assets/main.js"></script>
 </body>
+
 </html>
